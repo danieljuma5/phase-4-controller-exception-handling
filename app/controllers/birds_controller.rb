@@ -21,6 +21,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   # PATCH /birds/:id
   def update
     bird = find_bird
+    bird.update(bird_params)
     render json: bird
   end
 
